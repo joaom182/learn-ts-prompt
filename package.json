@@ -2,8 +2,11 @@
   "license": "MIT",
   "main": "src/main.js",
   "scripts": {
+    "start": "node dist/main.js",
     "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files --no-copy-ignored",
     "build:tsc": "tsc -p tsconfig-build.json && tscpaths -p tsconfig.json -s ./src -o ./dist",
+    "docker:build": "docker build -t joaom182/ts-node .",
+    "docker:run": "docker run joaom182/ts-node",
     "dev": "ts-node-dev -r tsconfig-paths/register --respawn --ignore-watch node_modules --no-notify src/main.ts",
     "lint:fix": "eslint --fix --ext .ts .",
     "lint": "eslint --ext .ts .",
